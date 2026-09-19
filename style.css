@@ -1,0 +1,237 @@
+/* おさんぽしたよ — 公開サイト共通スタイル
+   GitHub Pages (studionico120.github.io/Osapo) で index / support / privacy / terms / tokushoho が共有する。
+   ブランド: 温かみのあるオレンジ × クリーム地 (アプリ本体のトークンに準拠)。 */
+
+:root {
+  --bg: #FFF9F1;
+  --surface: #FFFFFF;
+  --ink: #3D3126;
+  --ink-soft: #8A7862;
+  --line: #F0E4D4;
+  --brand: #E8833A;
+  --brand-deep: #C96A24;
+  --brand-bg: #FDEEDD;
+  --ph-bg: #FFF1C8;
+  --ph-ink: #8A6510;
+  --radius: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1C1712;
+    --surface: #262019;
+    --ink: #F1E7DB;
+    --ink-soft: #B3A08B;
+    --line: #3A2F25;
+    --brand: #F09B58;
+    --brand-deep: #F3AE72;
+    --brand-bg: #38281A;
+    --ph-bg: #43370F;
+    --ph-ink: #F0D68A;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px 72px;
+}
+
+/* ---- ヘッダー ---- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.site-header .inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-header a.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 18px;
+}
+.site-header .paw { font-size: 20px; line-height: 1; }
+
+/* ---- 見出し ---- */
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 36px 0 6px;
+  text-wrap: balance;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 40px 0 10px;
+  padding-top: 8px;
+}
+h3 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; }
+
+.updated {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.lead { font-size: 17px; color: var(--ink); }
+
+/* ---- 本文 ---- */
+p { margin: 12px 0; }
+a { color: var(--brand-deep); }
+a:hover { color: var(--brand); }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+ul, ol { margin: 12px 0; padding-left: 1.4em; }
+li { margin: 6px 0; }
+
+strong { font-weight: 700; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+/* ---- テーブル (横スクロール対応) ---- */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  font-size: 15px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th {
+  background: var(--brand-bg);
+  color: var(--brand-deep);
+  font-weight: 700;
+  white-space: nowrap;
+}
+tr:last-child td { border-bottom: none; }
+
+/* ---- 公開前に差し替えるプレースホルダ ---- */
+.ph {
+  background: var(--ph-bg);
+  color: var(--ph-ink);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+/* ---- 特商法などの定義リスト調テーブルの見出し列 ---- */
+table.kv th { width: 34%; }
+
+/* ---- FAQ ---- */
+.faq details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin: 10px 0;
+  padding: 4px 18px;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 12px 0;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before { content: "🐾 "; }
+.faq details[open] summary { border-bottom: 1px solid var(--line); }
+.faq .answer { padding: 12px 0 14px; color: var(--ink); white-space: pre-line; }
+
+/* ---- ランディング (index) ---- */
+.hero {
+  text-align: center;
+  padding: 48px 0 12px;
+}
+.hero .paw-big { font-size: 44px; }
+.hero h1 { margin-top: 12px; }
+.hero .sub { color: var(--ink-soft); font-size: 17px; max-width: 30em; margin: 8px auto 0; }
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 28px 0;
+}
+@media (min-width: 620px) {
+  .features { grid-template-columns: repeat(3, 1fr); }
+}
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.feature .ico { font-size: 26px; }
+.feature h3 { margin: 8px 0 4px; }
+.feature p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+.note {
+  background: var(--brand-bg);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  color: var(--brand-deep);
+  font-size: 15px;
+  margin: 24px 0;
+}
+
+/* ---- フッター ---- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 56px;
+}
+.site-footer .inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-bottom: 14px;
+}
+.site-footer nav a { color: var(--ink); text-decoration: none; }
+.site-footer nav a:hover { color: var(--brand-deep); text-decoration: underline; }
