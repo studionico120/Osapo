@@ -20,20 +20,20 @@
   <p>「おさんぽしたよ」（以下「本アプリ」といいます）における、ユーザーの個人情報の取扱いについて以下のとおり定めます。</p>
 
   <h2>1. 収集する情報</h2>
-  <p>本アプリは、サービスの提供のために以下の情報を取得します。アプリ同梱の <code>PrivacyInfo.xcprivacy</code> の <code>NSPrivacyCollectedDataTypes</code> と一致しています。</p>
+  <p>本アプリは、サービスの提供のために以下の情報を取得します。かっこ内は App Store の「アプリのプライバシー」表示で使われている区分名です。</p>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>種類 (Apple カテゴリ)</th><th>内容</th><th>用途</th><th>ユーザーに紐づくか</th><th>トラッキング目的</th></tr>
+        <tr><th>種類</th><th>内容</th><th>用途</th><th>あなたと結びつく形で保存するか</th><th>広告の追跡に使うか</th></tr>
       </thead>
       <tbody>
-        <tr><td>User ID</td><td>Apple Sign in が返す stable な識別子、初回サインイン時の表示名 (任意)</td><td>アカウント作成、家族グループ参加、家族間のリアクション</td><td>はい</td><td>しない</td></tr>
-        <tr><td>Precise Location</td><td>お散歩中の GPS 軌跡 (緯度・経度・タイムスタンプ)、開始地点 / 終了地点</td><td>お散歩の距離計算、ルート可視化、ホーム画面ウィジェット</td><td>はい</td><td>しない</td></tr>
-        <tr><td>Photos or Videos</td><td>ユーザーが任意で選択・撮影したわんちゃん / お散歩の写真</td><td>家族との共有、シェアカード作成</td><td>はい</td><td>しない</td></tr>
-        <tr><td>Crash Data</td><td>Apple 標準のクラッシュレポート (iOS が自動収集)</td><td>不具合解析・品質改善</td><td>いいえ</td><td>しない</td></tr>
-        <tr><td>Device ID</td><td>Google AdMob (第三者広告 SDK) が送る非個人化の端末識別子。<strong>IDFA ではありません。</strong></td><td>広告配信時の不正検知</td><td>いいえ</td><td>しない</td></tr>
-        <tr><td>Coarse Location</td><td>Google AdMob が IP アドレスから推定する国・地域単位の位置情報</td><td>文脈に応じた広告 (Contextual Advertising)</td><td>いいえ</td><td>しない</td></tr>
-        <tr><td>Other Diagnostic Data</td><td>AdMob SDK 内部の動作ログ (レイテンシ等)</td><td>SDK 動作の品質改善 (Google 側の Analytics)</td><td>いいえ</td><td>しない</td></tr>
+        <tr><td>アカウント情報 (User ID)</td><td>Apple でサインインしたときに発行される識別子と、最初に設定した表示名 (任意)</td><td>アカウントの作成、家族グループへの参加、家族どうしのリアクション</td><td>はい</td><td>使いません</td></tr>
+        <tr><td>正確な位置情報 (Precise Location)</td><td>お散歩中の GPS の軌跡 (緯度・経度・時刻)、開始した場所と終了した場所</td><td>お散歩の距離の計算、ルートの表示、ホーム画面のウィジェット</td><td>はい</td><td>使いません</td></tr>
+        <tr><td>写真 (Photos or Videos)</td><td>あなたが選んだり撮ったりした、わんちゃんやお散歩の写真</td><td>家族との共有、シェアカードの作成</td><td>はい</td><td>使いません</td></tr>
+        <tr><td>クラッシュ情報 (Crash Data)</td><td>アプリが強制終了したときに iOS が自動で集める記録</td><td>不具合の調査と品質の改善</td><td>いいえ</td><td>使いません</td></tr>
+        <tr><td>端末の識別子 (Device ID)</td><td>広告配信のために Google AdMob が送る識別子。<strong>広告 ID (IDFA) ではありません。</strong></td><td>広告の不正利用の検知</td><td>いいえ</td><td>使いません</td></tr>
+        <tr><td>おおまかな位置情報 (Coarse Location)</td><td>Google AdMob が接続元から推定する、国や地域といった大まかな範囲</td><td>その場面に合った広告の表示</td><td>いいえ</td><td>使いません</td></tr>
+        <tr><td>その他の診断データ (Other Diagnostic Data)</td><td>広告表示にかかった時間など、広告機能の動作記録</td><td>広告機能の品質の改善 (Google 側で実施)</td><td>いいえ</td><td>使いません</td></tr>
       </tbody>
     </table>
   </div>
@@ -43,7 +43,7 @@
     <li>連絡先 (Contacts)</li>
     <li>カレンダー / リマインダー</li>
     <li>ヘルスケアデータ</li>
-    <li><strong>IDFA (広告識別子) — AdMob は組み込んでいますが個人化広告を行わないため取得しません</strong></li>
+    <li><strong>広告 ID (IDFA) — 広告は表示しますが、あなたの興味関心にもとづく配信を行わないため取得しません</strong></li>
     <li>端末横断・アプリ横断のトラッキング</li>
   </ul>
 
@@ -62,8 +62,8 @@
   <h3>広告について</h3>
   <p>本アプリは無料プランの方に対して、Google AdMob 経由で広告を表示することがあります。広告の取扱いは以下の方針に従います。</p>
   <ul>
-    <li><strong>個人化広告は配信しません。</strong> AdMob には常に "Non-Personalized Ads" (npa=1) フラグを付けてリクエストしています。これにより閲覧履歴・行動履歴に基づくターゲティングは行われず、表示中の文脈に応じた広告のみが配信されます。</li>
-    <li><strong>IDFA (広告識別子) を取得しません。</strong> App Tracking Transparency (ATT) の許諾ダイアログも表示しません。</li>
+    <li><strong>個人化広告は配信しません。</strong> 広告を読み込むときは毎回「個人化しない」という指定を付けています。そのため、あなたの閲覧履歴や行動履歴にもとづいて広告が選ばれることはなく、そのとき表示している画面の内容に合った広告だけが配信されます。</li>
+    <li><strong>広告 ID (IDFA) を取得しません。</strong> そのため、他社アプリをまたいだ追跡の許可を求めるダイアログも表示されません。</li>
     <li><strong>広告枠は限定的です。</strong> 「カレンダー」タブの最下部のバナー枠 1 箇所と、ご自身が「ご褒美広告」を選んでタップした場合のリワード広告のみです。お散歩中・お散歩のサマリー・家族のフィード・ホーム画面・初回オンボーディングには広告を表示しません。</li>
     <li><strong>プレミアム加入で広告は完全に非表示になります。</strong></li>
   </ul>
@@ -84,13 +84,13 @@
     <table>
       <thead><tr><th>委託先</th><th>用途</th><th>取り扱う情報</th><th>データ所在国</th></tr></thead>
       <tbody>
-        <tr><td>Apple Inc.</td><td>App Store 配信、Sign in with Apple、APNs (プッシュ通知配信)、StoreKit 決済</td><td>User ID、APNs トークン、決済情報</td><td>米国・各国 Apple 拠点</td></tr>
-        <tr><td>Supabase Inc.</td><td>データベース (Postgres)、認証、ストレージ、Edge Functions、Realtime</td><td>散歩記録、写真 URL、家族グループ情報、サブスクリプション状態</td><td>アプリの本番リージョン (現在: ap-northeast-1 / 東京)</td></tr>
-        <tr><td>Google LLC (AdMob)</td><td>無料プランの方への非個人化広告の配信 (バナー・リワード)</td><td>端末識別子 (IDFA ではない)、IP アドレスから推定される粗い位置情報、広告対話イベント</td><td>米国ほか Google データセンター</td></tr>
+        <tr><td>Apple Inc.</td><td>アプリの配信、Apple でのサインイン、プッシュ通知の配信、お支払いの処理</td><td>アカウント情報、通知の送り先を示す識別子、お支払いの情報</td><td>米国および各国の Apple 拠点</td></tr>
+        <tr><td>Supabase Inc.</td><td>記録の保存、サインインの管理、写真の保管、家族への通知や更新の配信</td><td>お散歩の記録、写真、家族グループの情報、プレミアム会員の状態</td><td>日本国内 (東京)</td></tr>
+        <tr><td>Google LLC (AdMob)</td><td>無料プランの方への広告の配信。あなたの興味関心にもとづく広告は配信しません</td><td>端末の識別子 (広告 ID ではありません)、接続元から推定される国や地域、広告に対する操作の記録</td><td>米国ほか Google のデータセンター</td></tr>
       </tbody>
     </table>
   </div>
-  <p>国外への個人情報移転が発生する範囲は、上記委託先の本社所在国 (米国) ならびに上記リージョンに限定されます。</p>
+  <p>海外に情報が渡るのは、上記の委託先の本社がある国 (米国) に限られます。お散歩の記録や写真そのものは、日本国内 (東京) に保管されます。</p>
 
   <h2>5. 保管期間</h2>
   <ul>
@@ -102,11 +102,11 @@
   <h2>6. 安全管理措置</h2>
   <p>当方は、ユーザーの個人情報を保護するため、以下の措置を講じます。</p>
   <ul>
-    <li>通信経路の HTTPS / TLS 暗号化</li>
-    <li>データベースの Row Level Security (RLS) によるユーザー / 家族単位のアクセス制御</li>
-    <li>ストレージのアクセスポリシー設定</li>
-    <li>Apple 推奨のセキュリティ対策 (Keychain, ATS 等)</li>
-    <li>開発者・運用担当者の最小権限アクセス</li>
+    <li>端末とサーバーの間の通信を暗号化し、途中で読み取られないようにしています</li>
+    <li>保存された記録には、本人とそのご家族しかアクセスできない仕組みを、データベース側で強制しています</li>
+    <li>写真の保管場所にも同様のアクセス制限を設けています</li>
+    <li>サインイン情報の保管には、Apple が推奨する仕組みを使っています</li>
+    <li>運営側の担当者にも、業務に必要な最小限の範囲しかアクセス権を与えていません</li>
   </ul>
 
   <h2>7. ユーザーの権利</h2>
@@ -121,7 +121,7 @@
   <h2>8. Cookie・トラッキングについて</h2>
   <ul>
     <li>本アプリは Web ブラウザ上で動作するものではないため、Cookie は使用しません。</li>
-    <li>本アプリは <strong>App Tracking Transparency (ATT) の対象となる第三者向けトラッキングを行いません。</strong> AdMob を組み込んでいますが、IDFA を取得せず、個人化広告も配信しないため、ATT 許諾ダイアログは表示されません。</li>
+    <li>本アプリは、<strong>他社のアプリやサイトをまたいであなたを追跡することはありません。</strong> 広告は表示しますが、広告 ID を取得せず、あなたの興味関心にもとづく広告も配信しないため、追跡の許可を求めるダイアログは表示されません。</li>
     <li>本アプリ内から外部 Web サイト (お問い合わせフォーム、利用規約の Web 版等) に遷移した場合、当該サイトでは Cookie 等が利用される場合があります。</li>
   </ul>
 
